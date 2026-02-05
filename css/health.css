@@ -1,0 +1,119 @@
+/* Reset + base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --navy: #274375;
+  --navy-dark: #1f3561;
+  --page-padding: 32px;
+  --radius: 12px;
+  --max-width: 1100px;
+}
+body{
+  font-family: "Poppins", Arial, sans-serif;
+  color: #153240;
+  background: #fff;
+  line-height: 1.5;
+}
+
+
+.site-header {
+  background: #0c2b63;
+  color: #fff;
+  padding: 3¬0px;
+}
+/* .header-inner { max-width: var(--max-width); margin: 0 auto; display:flex; align-items:center; } */
+.brand a { color: white; text-decoration: none; font-weight: 700; font-size: 1.15rem; }
+
+
+.page { max-width: var(--max-width); margin: 28px auto; padding: 0 var(--page-padding); }
+
+
+.page-title h1 {
+  font-size: 2rem;
+  color: #153240;
+  margin-bottom: 18px;
+}
+
+
+.hero { margin-bottom: 34px; }
+.hero-banner {
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
+  color: white;
+  padding: 28px 22px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(22,41,69,0.06);
+}
+.hero-banner h2 {
+  font-size: 2.0rem;
+  font-weight: 700;
+}
+.hero-sub {
+  margin-top: 18px;
+  font-size: 1.05rem;
+  color: #213b51;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 26px;
+}
+
+.tip-card {
+  background:#274375 ;
+  color: #fff;
+  padding: 20px 22px;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(33, 59, 84, 0.06);
+}
+.tip-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+.tip-card ul {
+  list-style: disc;
+  margin-left: 18px;
+}
+.tip-card li {
+  margin-bottom: 10px;
+  color: white;
+  font-size: 0.98rem;
+}
+
+
+.site-footer {
+  margin-top: 94px;
+  background: #0c2b63;
+  color: white;
+  padding: 30px ;
+  text-align: center;
+}
+
+
+@media (max-width: 1024px) {
+  .page { padding: 0 22px; }
+  .hero-banner h2 { font-size: 1.8rem; }
+  .tips-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+}
+
+
+@media (max-width: 760px) {
+  .page-title h1 { font-size: 1.6rem; }
+  .hero-banner h2 { font-size: 1.4rem; padding: 20px; }
+  .hero-sub { font-size: 0.98rem; }
+
+  .tips-grid { grid-template-columns: 1fr; gap: 16px; }
+
+
+  .tip-card { padding: 16px; }
+  .tip-card h3 { font-size: 1.05rem; }
+  .tip-card li { font-size: 0.95rem; }
+}
+
+
+@media (max-width: 420px) {
+  .hero-banner h2 { font-size: 1.2rem; padding: 16px; }
+  .page { padding: 0 14px; }
+  .page-title h1 { font-size: 1.25rem; margin-bottom: 12px; }
+}

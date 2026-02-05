@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0c2b63;
+  color: white;
+  padding: 28px 30px;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.header-title {
+  font-size: 1.2em;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #d0d8e3;
+}
+
+.container {
+  display: flex;
+  min-height: 70vh;
+}
+
+.sidebar {
+  background-color: #274375;
+  width: 250px;
+  padding-top: 40px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin: 20px 0;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  padding: 30px 20px;
+  font-size: 23px;
+  display: block;
+ 
+}
+
+.sidebar a:hover {
+  background-color: #006cbf;
+  border-radius: 5px;
+}
+
+.content {
+  flex: 1;
+  padding: 30px;
+  position: relative;
+}
+
+.content h2 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  color: #1e3a56;
+}
+
+.vaccine-select {
+  width: 50%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.calendar-image {
+  width: 60%;
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.vaccine-details {
+  background-color: #274375;
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 320px;
+  position: absolute;
+  right: 60px;
+  top: 120px;
+  margin-top: 60px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vaccine-details h3 {
+  margin-bottom: 20px;
+}
+
+.btn {
+  margin-top: 15px;
+  background-color: white;
+  color: #1e3a56;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #d0d8e3;
+}
+
+.vaccine-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.vaccine-form label {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.vaccine-form input,
+.vaccine-form textarea {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 15px;
+  outline: none;
+}
+
+.vaccine-form textarea {
+  resize: none;
+  height: 70px;
+}
+
+footer {
+  background-color: #0c2b63;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 30px;
+}
+
+.footer-links a {
+  color: white;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+/* ----- RESPONSIVE DESIGN ----- */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    text-align: center;
+  }
+
+  .sidebar a {
+    display: inline-block;
+    padding: 10px 15px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .calendar-image {
+    width: 80%;
+  }
+
+  .vaccine-select {
+    width: 80%;
+  }
+
+  .vaccine-details {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .sidebar a {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+
+  .content {
+    padding: 15px;
+  }
+
+  .calendar-image {
+    width: 100%;
+  }
+
+  .vaccine-select {
+    width: 100%;
+  }
+
+  .vaccine-details {
+    width: 100%;
+    padding: 20px;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links {
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,65 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>VacciCare | Login & Signup</title>
+    <link rel="stylesheet" href="../css/login.css">
+  </head>
+  <body>
+
+  <nav class="navbar">
+    <div class="logo">VacciCare</div>
+  </nav>
+
+  <div class="auth-container">
+    <form id="authForm" class="auth-box">
+
+      <h2 id="formTitle">Client Login</h2>
+      <p class="subtitle">Safe care for mothers & babies</p>
+
+      <div class="role-toggle">
+        <button type="button" id="clientBtn" class="active">Client</button>
+        <button type="button" id="doctorBtn">Doctor</button>
+      </div>
+
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+
+      <!-- CLIENT -->
+      <div id="clientFields" class="hidden">
+        <input type="text" id="client_name" placeholder="Full Name">
+        <input type="text" id="client_phone" placeholder="Phone Number">
+        <input type="text" id="client_address" placeholder="Address">
+        <input type="text" id="client_location" placeholder="Location">
+      </div>
+
+      <!-- DOCTOR -->
+      <div id="doctorFields" class="hidden">
+        <input type="text" id="doctor_name" placeholder="Doctor Name">
+        <input type="text" id="doctor_phone" placeholder="Phone Number">
+        <input type="text" id="doctor_role" placeholder="Role">
+
+        <select id="hospital_select">
+          <option value="">Select Hospital</option>
+        </select>
+
+        <input type="text" id="doctor_address" placeholder="Address">
+      </div>
+
+      <button class="submit-btn" type="submit">Sign In</button>
+
+      <p class="switch-text">
+        Don’t have an account?
+        <span id="switchMode">Create one</span>
+      </p>
+
+    </form>
+  </div>
+
+  <footer>
+    <p>© 2026 VacciCare. All rights reserved.</p>
+  </footer>
+
+  <script src="../js/login.js"></script>
+  </body>
+  </html>

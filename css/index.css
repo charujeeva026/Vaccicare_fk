@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f8fafc;
+  color: #333;
+}
+
+.navbar {
+  background-color: #0c2b63;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 10px;
+  flex-wrap: wrap;
+  font-size: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 80px;
+}
+
+nav a {
+  margin: 0 12px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: none;
+  background-color:  #006cbf;
+  width: 80px;
+  padding: 15px;
+}
+
+.login-btn {
+  background: #fff;
+  color: #1d4983;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.login-btn:hover {
+  background: #263b68;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height:400px;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 75vh;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.overlay {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  max-width: 500px;
+}
+
+.overlay h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color:#0c2b63;
+}
+
+.overlay p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color:#0c2b63;
+}
+
+.hero-buttons button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.primary-btn {
+  background-color: #0c2b63;
+  color: white;
+}
+.primary-btn:hover {
+  background: #006cbf;
+}
+.secondary-btn {
+  background-color: #0c2b63;
+  color:white;
+}
+.secondary-btn:hover{
+    background-color:#006cbf;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  margin-top: 30px;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 280px;
+  transition: transform 0.3s;
+  height: 218px;
+}
+.feature-card a{
+  text-decoration: none;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card img {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+}
+
+.feature-card h3 {
+  padding: 15px;
+  font-size: 1rem;
+  color: #1e293b;
+}
+
+/* Footer */
+.footer {
+  background-color: #0c2b63;
+  color: white;
+  display: flex;
+  margin-top: 25px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  flex-wrap: wrap;
+
+}
+
+.footer a {
+  color: white;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  .overlay {
+    left: 5%;
+    top: 25%;
+    max-width: 400px;
+  }
+
+  .features {
+    gap: 60px;
+  }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo h2 {
+    font-size: 1.4rem;
+  }
+
+  nav {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  nav a {
+    margin: 8px 0;
+  }
+
+  .overlay {
+    top: 20%;
+    left: 8%;
+    max-width: 90%;
+  }
+
+  .overlay h1 {
+    font-size: 1.6rem;
+  }
+
+  .overlay p {
+    font-size: 0.9rem;
+  }
+
+  .hero img {
+    height: 50vh;
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .feature-card {
+    width: 90%;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+}
+
+/* Small phones (≤ 480px) */
+@media (max-width: 480px) {
+  .overlay h1 {
+    font-size: 1.4rem;
+  }
+
+  .overlay p {
+    font-size: 0.85rem;
+  }
+
+  .hero-buttons button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .login-btn {
+    padding: 6px 14px;
+    font-size: 0.9rem;
+  }
+
+  .feature-card {
+    width: 95%;
+  }
+
+  .footer p {
+    font-size: 0.85rem;
+  }
+}

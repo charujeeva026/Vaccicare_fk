@@ -1,0 +1,168 @@
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Navbar */
+/* header {
+  background-color: #0c2b63;
+  color: white;
+  padding: 30px 40px;
+  display: flex;
+  justify-content: space-between;
+ 
+} */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    gap:1200px;
+}
+header {
+  background-color: #0c2b63;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 40px;
+  font-size: 1.2rem;
+}
+
+.logo {
+  margin: 0;
+}
+
+.profile-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Appointment form */
+.appointment-container {
+  max-width: 400px;
+  margin: 60px auto;
+  text-align: left;
+}
+
+.appointment-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, select {
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #274375;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+button:hover {
+  background-color: #006cbf;
+}
+
+/* Footer */
+
+footer {
+  background-color: #0c2b63;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 17px 30px;
+  position: fixed;
+  padding-bottom: 20px; 
+  bottom: 0;
+  width: 97%;
+  font-size: 20px;
+}
+
+.footer-links {
+  margin-bottom: 5px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 15px 20px;
+  }
+
+  .navbar h2 {
+    font-size: 1.3rem;
+  }
+
+  .profile-link {
+    font-size: 0.9rem;
+  }
+
+  .appointment-container {
+    width: 85%;
+    margin: 40px auto;
+    padding: 15px;
+  }
+
+  button {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .appointment-container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  input, select {
+    font-size: 13px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  footer {
+    font-size: 14px;
+  }
+}

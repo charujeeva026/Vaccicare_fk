@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:#0c2b63;
+  color: white;
+  padding: 40px 30px;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.header-title {
+  font-size: 1.2em;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #d0d8e3;
+}
+
+.container {
+  display: flex;
+  min-height: 79vh;
+}
+
+.sidebar {
+  background-color: #274375;
+  width: 250px;
+  padding-top: 30px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin: 20px 0;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  padding: 30px 20px;
+  display: block;
+  font-size: 23px;
+  transition: background 0.3s;
+}
+
+.sidebar a:hover {
+  background-color:  #006cbf;
+  border-radius: 5px;
+}
+
+.content {
+  flex: 1;
+  padding: 30px;
+}
+
+.content h2 {
+  color: #1e3a56;
+  margin-bottom: 25px;
+}
+
+.guideline-cards {
+  display: grid;
+  gap: 70px;
+}
+.guideline-cards a{
+  text-decoration: none;
+}
+
+.card {
+  background-color: #274375;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.2s;
+  text-decoration: none;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card.large {
+  grid-column: span 2;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+footer {
+  background-color: #0c2b63;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+}
+
+.footer-links a {
+  color: white;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+.vaccine-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vaccine-left h3,
+.vaccine-middle h4 {
+  margin-bottom: 6px;
+}
+
+.vaccine-left p,
+.vaccine-middle p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.vaccine-right {
+  display: flex;
+  align-items: center;
+}
+
+.status-btn {
+  padding: 10px 16px;
+  border-radius: 20px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+.info-box {
+  background-color: #274375;
+  color: white;
+  padding: 25px 30px;
+  border-radius: 12px;
+}
+
+/* NOT COMPLETED */
+.status-btn.pending {
+  background-color: #ffffff;
+  color: #274375;
+}
+
+/* COMPLETED */
+.status-btn.done {
+  background-color: #4caf50;
+  color: white;
+}
+
+
+/* Tablets (≤1024px) */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  .sidebar a {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .guideline-cards {
+    gap: 20px;
+  }
+}
+
+/* Phones (≤600px) */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .header-title {
+    margin: 5px 0;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .sidebar a {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+
+  .content {
+    padding: 15px;
+  }
+
+  .guideline-cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links {
+    margin-bottom: 10px;
+  }
+}
