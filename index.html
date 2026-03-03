@@ -1,68 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VacciCare</title>
-    <link rel="stylesheet" href="./css/index.css" />
-  </head>
-  <body>
-    <div class="navbar">
-      <div class="logo">
-        <img src="Assets/logo_without bg.png" alt="logo" width:250px; />
-        <h2>VacciCare</h2>
-      </div>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="page/dash.html">Dashboard</a>
-        <a href="page/hosiptal.html">Hospital</a>
-        <a href="page/calender.html">Vaccine Calendar</a>
-        <a href="page/guideness.html">Health Guidelines</a>
-        <a href="page/vaccine.html">Add Vaccine</a>
-      </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VacciCare</title>
+  <link rel="stylesheet" href="./css/index.css" />
+</head>
 
-      <a href="./page/login.html"><button class="login-btn">Login</button></a>
-    </div>  
-    <section class="hero">
-      <img src="./Assets/background_new.jpg" alt="Mother and baby" />
-      <div class="overlay">
-        <h1>“Care that Counts”</h1>
-        <p>
-          Track Vaccines, find Hospitals, and get trusted care for mother and
-          babies.
-        </p>
-        <div class="hero-buttons">
-          <a href="page/dash.html"
-            ><button class="primary-btn">Get Started</button></a
-          >
-          <button class="secondary-btn">Learn More</button>
-        </div>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+
+  <div class="navbar">
+    <div class="logo">
+      <img src="Assets/logo_without bg.png" alt="logo" width="50" />
+      <h2>VacciCare</h2>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="page/dash.html">Dashboard</a>
+      <a href="page/hosiptal.html">Hospital</a>
+      <a href="page/calender.html">Vaccine Calendar</a>
+      <a href="page/guideness.html">Health Guidelines</a>
+      <a href="page/vaccine.html">Add Vaccine</a>
+    </nav>
+
+    <button class="login-btn" id="authBtn">Login</button>
+  </div>
+
+  <!-- ================= HERO ================= -->
+
+  <section class="hero">
+    <img src="./Assets/background_new.jpg" alt="Mother and baby" />
+
+    <div class="overlay">
+      <h1>“Care that Counts”</h1>
+      <p>
+        Track Vaccines, find Hospitals, and get trusted care for mother and babies.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="primary-btn protected-btn" data-page="page/dash.html">
+          Get Started
+        </button>
+
+        <button class="secondary-btn">Learn More</button>
       </div>
-    </section>
-    <section class="features">
-      <div class="feature-card">
-        <img
-          src="./Assets/hospital-building-modern-parking-lot-59693686.webp"
-          alt="Hospital"
-        />
-        <h3><a href="../page/hosiptal.html">Near Hospital</a></h3>
-      </div>
-      <div class="feature-card">
-        <img src="./Assets/calender new.jpg" alt="Vaccine Reminder" />
-        <h3><a href="../page/calender.html"> Vaccine Reminders</a></h3>
-      </div>
-      <div class="feature-card">
-        <img src="./Assets/book new.webp" alt="Health Guide" />
-        <h3><a href="../page/guideness.html">Health Guidelines</a></h3>
-      </div>
-    </section>
-    <footer class="footer">
-      <div>
-        <a href="../page/about.html">About</a>
-        <a href="../page/contact.html">Contact</a>
-      </div>
-      <p>&copy; 2026 VacciCare</p>
-    </footer>
-      <script src="./js/home.js"></script>
-  </body>
+    </div>
+  </section>
+
+  <!-- ================= FEATURES ================= -->
+
+  <section class="features">
+
+    <div class="feature-card protected-card" data-page="page/hosiptal.html">
+      <img src="./Assets/hospital-building-modern-parking-lot-59693686.webp" alt="Hospital" />
+      <h3>Near Hospital</h3>
+    </div>
+
+    <div class="feature-card protected-card" data-page="page/calender.html">
+      <img src="./Assets/calender new.jpg" alt="Vaccine Reminder" />
+      <h3>Vaccine Reminders</h3>
+    </div>
+
+    <div class="feature-card protected-card" data-page="page/guideness.html">
+      <img src="./Assets/book new.webp" alt="Health Guide" />
+      <h3>Health Guidelines</h3>
+    </div>
+
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="footer">
+    <div>
+      <a href="page/about.html">About</a>
+      <a href="page/contact.html">Contact</a>
+    </div>
+    <p>&copy; 2026 VacciCare</p>
+  </footer>
+
+  <script src="./js/home.js"></script>
+
+</body>
 </html>
