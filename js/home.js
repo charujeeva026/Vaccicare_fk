@@ -7,26 +7,32 @@ document.addEventListener("DOMContentLoaded", function () {
     ====================================== */
 
     function updateAuthButton() {
-        const token = localStorage.getItem("token");
 
-        if (token) {
+        const clientId = localStorage.getItem("client_id");
+
+        if (clientId) {
+
             authBtn.textContent = "Logout";
 
             authBtn.onclick = function () {
-                localStorage.removeItem("token");
+
+                localStorage.removeItem("client_id");
                 localStorage.removeItem("role");
                 localStorage.removeItem("redirectAfterLogin");
 
                 alert("Logged out successfully ✅");
+
                 window.location.href = "index.html";
             };
 
         } else {
+
             authBtn.textContent = "Login";
 
             authBtn.onclick = function () {
                 window.location.href = "page/login.html";
             };
+
         }
     }
 
@@ -44,18 +50,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
         item.addEventListener("click", function () {
 
-            const token = localStorage.getItem("token");
+            const clientId = localStorage.getItem("client_id");
             const targetPage = this.getAttribute("data-page");
 
-            if (!token) {
+            if (!clientId) {
+
                 alert("Please login first!");
 
-                // Save target page to redirect after login
+                // Save page to redirect after login
                 localStorage.setItem("redirectAfterLogin", targetPage);
 
                 window.location.href = "page/login.html";
+
             } else {
+
                 window.location.href = targetPage;
+
             }
 
         });

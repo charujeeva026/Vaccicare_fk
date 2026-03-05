@@ -16,8 +16,13 @@ header {
 }
 
 .logo {
-  font-size: 1.5em;
-  font-weight: bold;  
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo h2 {
+  font-size: 20px;
 }
 
 .header-title {

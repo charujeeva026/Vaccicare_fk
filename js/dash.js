@@ -4,13 +4,21 @@ document.addEventListener("DOMContentLoaded", function () {
        1️⃣ LOGIN PROTECTION
     ========================= */
 
-    const token = localStorage.getItem("token");
+    const clientId = localStorage.getItem("client_id");
 
-    if (!token) {
+    if (!clientId) {
+
         alert("Please login first!");
+
+        // Save page to return after login
+        localStorage.setItem("redirectAfterLogin", "new_dash.html");
+
         window.location.href = "../page/login.html";
+
         return;
     }
+
+    console.log("Logged in Client ID:", clientId);
 
     /* =========================
        2️⃣ PROFILE ICON CLICK
@@ -32,7 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const sidebarLinks = document.querySelectorAll(".sidebar a");
 
     sidebarLinks.forEach(link => {
-        const linkPage = link.getAttribute("href");
+
+        const linkPage = link.getAttribute("href").split("/").pop();
 
         if (linkPage === currentPage) {
             link.classList.add("active");
@@ -42,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
             sidebarLinks.forEach(l => l.classList.remove("active"));
             this.classList.add("active");
         });
+
     });
 
     /* =========================
@@ -51,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const cardButtons = document.querySelectorAll(".card button");
 
     cardButtons.forEach(button => {
+
         button.addEventListener("mouseenter", function () {
             this.style.transform = "scale(1.05)";
             this.style.transition = "0.2s ease";
@@ -59,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("mouseleave", function () {
             this.style.transform = "scale(1)";
         });
+
     });
 
 });

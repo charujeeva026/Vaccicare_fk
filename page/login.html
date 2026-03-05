@@ -1,65 +1,67 @@
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>VacciCare | Login & Signup</title>
-    <link rel="stylesheet" href="../css/login.css">
-  </head>
-  <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VacciCare | Login & Signup</title>
+<link rel="stylesheet" href="../css/login.css">
+</head>
 
-  <nav class="navbar">
-    <div class="logo">VacciCare</div>
-  </nav>
+<body>
 
-  <div class="auth-container">
-    <form id="authForm" class="auth-box">
+<nav class="navbar">
+<div class="logo">VacciCare</div>
+</nav>
 
-      <h2 id="formTitle">Client Login</h2>
-      <p class="subtitle">Safe care for mothers & babies</p>
+<div class="auth-container">
+<form id="authForm" class="auth-box">
 
-      <div class="role-toggle">
-        <button type="button" id="clientBtn" class="active">Client</button>
-        <button type="button" id="doctorBtn">Doctor</button>
-      </div>
+<h2 id="formTitle">Client Login</h2>
+<p class="subtitle">Safe care for mothers & babies</p>
 
-      <input type="email" id="email" placeholder="Email" required>
-      <input type="password" id="password" placeholder="Password" required>
+<div class="role-toggle">
+<button type="button" id="clientBtn" class="active">Client</button>
+<button type="button" id="doctorBtn">Doctor</button>
+</div>
 
-      <!-- CLIENT -->
-      <div id="clientFields" class="hidden">
-        <input type="text" id="client_name" placeholder="Full Name">
-        <input type="text" id="client_phone" placeholder="Phone Number">
-        <input type="text" id="client_address" placeholder="Address">
-        <input type="text" id="client_location" placeholder="Location">
-      </div>
+<input type="email" id="email" placeholder="Email" required>
+<input type="password" id="password" placeholder="Password" required>
 
-      <!-- DOCTOR -->
-      <div id="doctorFields" class="hidden">
-        <input type="text" id="doctor_name" placeholder="Doctor Name">
-        <input type="text" id="doctor_phone" placeholder="Phone Number">
-        <input type="text" id="doctor_role" placeholder="Role">
+<!-- CLIENT SIGNUP FIELDS -->
+<div id="clientFields" class="hidden">
+<input type="text" id="client_name" placeholder="Full Name">
+<input type="text" id="client_phone" placeholder="Phone Number">
+<input type="text" id="client_address" placeholder="Address">
+<input type="text" id="client_location" placeholder="Location">
+</div>
 
-        <select id="hospital_select">
-          <option value="">Select Hospital</option>
-        </select>
+<!-- DOCTOR SIGNUP FIELDS -->
+<div id="doctorFields" class="hidden">
+<input type="text" id="doctor_name" placeholder="Doctor Name">
+<input type="text" id="doctor_phone" placeholder="Phone Number">
+<input type="text" id="doctor_role" placeholder="Role">
 
-        <input type="text" id="doctor_address" placeholder="Address">
-      </div>
+<select id="hospital_select">
+<option value="">Select Hospital</option>
+</select>
 
-      <button class="submit-btn" type="submit">Sign In</button>
+<input type="text" id="doctor_address" placeholder="Address">
+</div>
 
-      <p class="switch-text">
-        Don’t have an account?
-        <span id="switchMode">Create one</span>
-      </p>
+<button class="submit-btn" type="submit">Sign In</button>
 
-    </form>
-  </div>
+<p class="switch-text">
+Don’t have an account?
+<span id="switchMode">Create one</span>
+</p>
 
-  <footer>
-    <p>&copy; 2026 VacciCare. All rights reserved.</p>
-  </footer>
+</form>
+</div>
 
-  <script src="../js/login.js"></script>
-  </body>
-  </html>
+<footer>
+<p>&copy; 2026 VacciCare</p>
+</footer>
+
+<script src="../js/login.js"></script>
+
+</body>
+</html>
