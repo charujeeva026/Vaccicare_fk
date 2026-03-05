@@ -1,0 +1,113 @@
+<!doctype >
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>VacciCare Dashboard</title>
+    <link rel="stylesheet" href="../css/dash.css" />
+  </head>
+  <body>
+    <!-- Topbar -->
+    <header class="topbar">
+      <div class="logo">
+        <img src="/Assets/logo_without bg.png" alt="logo"width="50px" height="50px"> 
+        <h2>Vacci<span>Care</span></h2>
+    </div>
+      <div class="title">Dashboard</div>
+      <div class="profile">
+        <img src="https://via.placeholder.com/40" alt="profile" />
+      </div>
+    </header>
+
+    <!-- Layout Container -->
+    <div class="container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <nav>
+          <a href="#">Home</a>
+          <a href="#">Dashboard</a>
+          <a href="#">Hospitals</a>
+          <a href="#">Vaccine Calendar</a>
+          <a href="#">Health Guidelines</a>
+          <a href="#">Profile</a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main">
+        <!-- Welcome Banner -->
+        <div class="welcome-banner">
+          <div class="welcome-text">
+            <h2>👋 Welcome back, User!</h2>
+            <p>Track your vaccines, find hospitals, and stay healthy.</p>
+          </div>
+
+          <div class="welcome-stats">
+            <div class="stat-pill">
+              <span class="val">4</span>
+              <span class="lbl">Vaccines Done</span>
+            </div>
+            <div class="stat-pill">
+              <span class="val">2</span>
+              <span class="lbl">Upcoming</span>
+            </div>
+            <div class="stat-pill">
+              <span class="val">12</span>
+              <span class="lbl">Nearby Hospitals</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=500"
+              />
+              <!-- <span class="card-badge">Hospitals</span> -->
+            </div>
+            <div class="card-body">
+              <div class="card-title">Find Nearby Hospitals</div>
+              <div class="card-desc">
+                Locate trusted hospitals near your location instantly.
+              </div>
+              <button class="card-btn">View Nearby</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1506784365847-bbad939e9335?w=500"
+              />
+              <!-- <span class="card-badge"> Schedule</span> -->
+            </div>
+            <div class="card-body">
+              <div class="card-title">Vaccine Calendar</div>
+              <div class="card-desc">
+                View upcoming vaccine schedule and reminders.
+              </div>
+              <button class="card-btn">Open Calendar</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1512678080530-7760d81faba6?w=500"
+              />
+              <!-- <span class="card-badge"> Guidelines</span> -->
+            </div>
+            <div class="card-body">
+              <div class="card-title">Health Guidelines</div>
+              <div class="card-desc">
+                Read expert health tips to keep your family safe.
+              </div>
+              <button class="card-btn">Read More</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

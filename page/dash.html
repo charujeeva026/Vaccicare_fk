@@ -1,62 +1,249 @@
-<!DOCTYPE html>
+<!-- <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VacciCare Dashboard</title>
-  <link rel="stylesheet" href="../css/dash.css" />
-</head>
-<body>
-  <header class="topbar">
-    <div class="logo">VacciCare</div>
-    <nav>
-      <a href="../page/dash.html">Dashboard</a>
-    </nav>
-    <div class="profile-icon">
-      <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Profile" />
-    </div>
-  </header>
-
-  <div class="main-container">
-    <aside class="sidebar">
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../page/hosiptal.html">Hospital</a></li>
-        <li><a href="../page/calender.html">Vaccine Calendar</a></li>
-        <li><a href="../page/guideness.html">Health Guidelines</a></li>
-        <li><a href="../page/vaccine.html">Add Vaccine</a></li>
-        <li><a href="../page/profile.html">Profile</a></li>
-      </ul>
-    </aside>
-
-    <main class="content">
-      <div class="card crad1">
-        <img src="../Assets/hospital image.webp" alt="Hospital"  />
-        <a href="../page/hosiptal.html" class="card-btn">View Nearby</a>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VacciCare Dashboard</title>
+    <link rel="stylesheet" href="../css/dash.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="logo">VacciCare</div>
+      <nav>
+        <a href="../page/dash.html">Dashboard</a>
+      </nav>
+      <div class="profile-icon">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+          alt="Profile"
+        />
       </div>
+    </header>
 
-      <div class="card card2">
-        <img src="../Assets/calender.jpg" alt="Vaccine" />
-          <!-- <h3><a href="../page/calender.html"><button>Open Calendar</button> </a></h3> -->
-           <a href="calender.html" class="card-btn">Open Calender</a>
+    <div class="main-container">
+      <aside class="sidebar">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../page/hosiptal.html">Hospital</a></li>
+          <li><a href="../page/calender.html">Vaccine Calendar</a></li>
+          <li><a href="../page/guideness.html">Health Guidelines</a></li>
+          <li><a href="../page/vaccine.html">Add Vaccine</a></li>
+          <li><a href="../page/profile.html">Profile</a></li>
+        </ul>
+      </aside>
 
-      </div>
+      <main class="content">
+          <div class="welcome-banner">
+          <div class="welcome-text">
+            <h2>👋 Welcome back, User!</h2>
+            <p>Track your vaccines, find hospitals, and stay healthy.</p>
+          </div>
+          <div class="welcome-stats">
+            <div class="stat-pill">
+              <span class="val">4</span>
+              <span class="lbl">Vaccines Done</span>
+            </div>
+            <div class="stat-pill">
+              <span class="val">2</span>
+              <span class="lbl">Upcoming</span>
+            </div>
+            <div class="stat-pill">
+              <span class="val">12</span>
+              <span class="lbl">Nearby Hospitals</span>
+            </div>
+          </div>
+        </div>
+        <div class="card crad1">
+          <img src="../Assets/hospital image.webp" alt="Hospital" />
+          <a href="../page/hosiptal.html" class="card-btn">View Nearby</a>
+        </div>
 
-      <div class="card card3">
-        <img src="../Assets/mother.webp" alt="Health" />
+        <div class="card card2">
+          <img src="../Assets/calender.jpg" alt="Vaccine" />
+          <a href="calender.html" class="card-btn">Open Calender</a>
+        </div>
+
+        <div class="card card3">
+          <img src="../Assets/mother.webp" alt="Health" />
           <a href="../page/guideness.html" class="card-btn">Read More</a>
-      </div>
-    </main>
-  </div>
-
-  <footer class="footer">
-    <div class="footer-links">
-      <a href="../page/about.html">About</a>
-      <a href="../page/contact.html">Contact</a>
+        </div>
+      </main>
     </div>
-    <div class="footer-text">&copy;2026 VacciCare</div>
-  </footer>
-</body>
-<script src="../js/dash.js"></script>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="../page/about.html">About</a>
+        <a href="../page/contact.html">Contact</a>
+      </div>
+      <div class="footer-text">&copy;2026 VacciCare</div>
+    </footer>
+  </body>
+  <script src="../js/dash.js"></script>
+</html> -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>VacciCare Dashboard</title>
+    <link rel="stylesheet" href="/css/dash.css" />
+  </head>
+  <body>
+    <!-- Top Navbar -->
+    <header class="topbar">
+      <div class="logo">VacciCare</div>
+      <div class="title">Dashboard</div>
+      <div class="profile">
+        <img src="https://via.placeholder.com/40" alt="profile" />
+      </div>
+    </header>
+
+    <div class="container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <ul>
+          <li>Home</li>
+          <li>Hospital</li>
+          <li>Vaccine Calendar</li>
+          <li>Health Guidelines</li>
+          <li>Add Vaccine</li>
+          <li>Profile</li>
+        </ul>
+      </aside>
+
+      <!-- Main Content
+      <main class="main">
+        <!- Welcome Card -->
+        <!-- <div class="welcome-card">
+          <div class="welcome-text">👋 Welcome back, User!</div>
+          <div class="stats">
+            <div>
+              <h2>4</h2>
+              <p>Vaccines Done</p>
+            </div>
+            <div>
+              <h2>2</h2>
+              <p>Upcoming</p>
+            </div>
+            <div>
+              <h2>12</h2>
+              <p>Nearby Hospitals</p>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Cards Section -->
+        <!-- <div class="cards">
+          <div class="card">
+            <img
+              src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe"
+              alt=""
+            />
+            <button>Open Calendar</button>
+          </div>
+
+          <div class="card">
+            <img
+              src="https://images.unsplash.com/photo-1584515933487-779824d29309"
+              alt=""
+            />
+            <button>Read More</button>
+          </div>
+
+          <div class="card">
+            <img
+              src="https://images.unsplash.com/photo-1580281657527-47a75a5fbe17"
+              alt=""
+            />
+            <button>View Nearby</button>
+          </div>
+        </div>
+      </main> --> 
+    <!-- </div> -->
+     <!-- MAIN -->
+      <main class="main">
+        <!-- Welcome Banner -->
+        <div class="welcome-banner">
+          <div class="welcome-text">
+            <h2>👋 Welcome back, User!</h2>
+            <p>Track your vaccines, find hospitals, and stay healthy.</p>
+          </div>
+          <div class="welcome-stats">
+            <div class="stat-pill">
+              <span class="val">4</span>
+              <span class="lbl">Vaccines Done</span>
+            </div>
+            <div class="stat-pill">
+              <span class="val">2</span>
+              <span class="lbl">Upcoming</span>
+            </div>
+            <div class="stat-pill">
+              <span class="val">12</span>
+              <span class="lbl">Nearby Hospitals</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Cards -->
+        <!-- <div class="section-heading">🚀 Quick Access</div>
+        <div class="cards-grid"> -->
+          <!-- Card 1: Hospital -->
+          <div class="card">
+            <div class="card-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=500&q=80"
+                alt="Hospital"
+              />
+              <!-- <span class="card-badge">🏥 Hospitals</span> -->
+            </div>
+            <div class="card-body">
+              <div class="card-title">Find Nearby Hospitals</div>
+              <div class="card-desc">
+                Locate trusted hospitals, clinics, and health centres near your
+                location instantly.
+              </div>
+              <button class="card-btn">View Nearby</button>
+            </div>
+          </div>
+
+          <!-- Card 2: Calendar -->
+          <div class="card">
+            <div class="card-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1506784365847-bbad939e9335?w=500&q=80"
+                alt="Calendar"
+              />
+              <!-- <span class="card-badge">📅 Schedule</span> -->
+            </div>
+            <div class="card-body">
+              <div class="card-title">Vaccine Calendar</div>
+              <div class="card-desc">
+                View your upcoming vaccine schedule and never miss an important
+                immunisation date.
+              </div>
+              <button class="card-btn">Open Calendar</button>
+            </div>
+          </div>
+
+          <!-- Card 3: Health Guidelines -->
+          <div class="card">
+            <div class="card-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1512678080530-7760d81faba6?w=500&q=80"
+                alt="Health"
+              />
+              <!-- <span class="card-badge">🛡 Guidelines</span> -->
+            </div>
+            <div class="card-body">
+              <div class="card-title">Health Guidelines</div>
+              <div class="card-desc">
+                Read expert-backed health guidelines and tips to keep yourself
+                and your family safe.
+              </div>
+              <button class="card-btn">Read More</button>
+            </div>
+          </div>
+        </div>
+        </main>
+  </body>
 </html>

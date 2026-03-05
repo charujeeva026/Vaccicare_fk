@@ -74,7 +74,7 @@ function updateForm() {
 async function loadHospitals() {
   try {
     const res = await fetch(`${BASE_URL}/hospital/home`);
-    if (!res.ok) throw new Error("Failed to fetch hospitals");
+    if (!res.ok) throw new Error();
 
     const data = await res.json();
     const hospitals = Array.isArray(data) ? data : [data];
@@ -109,6 +109,7 @@ form.onsubmit = async (e) => {
 
   /* ================= LOGIN ================= */
   if (isLogin) {
+
     const payload = {
       email: email.value.trim(),
       password: password.value.trim()
@@ -139,17 +140,25 @@ form.onsubmit = async (e) => {
 
       alert("Login successful ✅");
 
-      /* ===== REDIRECT LOGIC ===== */
+      /* ===== SAFE REDIRECT LOGIC ===== */
       const redirectPage = localStorage.getItem("redirectAfterLogin");
 
       if (redirectPage) {
         localStorage.removeItem("redirectAfterLogin");
-        window.location.href = "../" + redirectPage;
+
+        // If page path already contains 'page/', adjust correctly
+        if (redirectPage.startsWith("page/")) {
+          window.location.href = "../" + redirectPage;
+        } else {
+          window.location.href = redirectPage;
+        }
+
       } else {
-        window.location.href = "dash.html";
+        window.location.href = "dash.html"; // default dashboard
       }
 
-    } catch {
+    } catch (error) {
+      console.error(error);
       alert("Server not reachable ❌");
     }
 
@@ -158,6 +167,7 @@ form.onsubmit = async (e) => {
 
   /* ================= CLIENT SIGNUP ================= */
   if (role === "Client") {
+
     const payload = {
       name: client_name.value.trim(),
       email: email.value.trim(),
