@@ -1,77 +1,85 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VacciCare - Vaccine Calendar</title>
-    <link rel="stylesheet" href="../css/calender.css" />
-  </head>
-  <body>
-    <header>
-      <div class="logo">VacciCare</div>
-      <div class="header-title">Vaccine Calendar</div>
-      <div class="profile-icon"></div>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VacciCare - Vaccine Calendar</title>
+  <link rel="stylesheet" href="../css/calender.css">
+</head>
 
-    <div class="container">
-      <nav class="sidebar">
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="../page/new_hospital.html">Hospital</a></li>
-          <li><a href="../page/new_dash.html">Dashboard</a></li>
-          <li><a href="../page/calender.html">Vaccine Calendar</a></li>
-          <li><a href="../page/guideness.html">Health Guidelines</a></li>
-          <li><a href="../page/vaccine.html">Add vaccine</a></li>
-          <li><a href="../page/profile.html">Profile</a></li>
-        </ul>
-      </nav>
+<body>
 
-      <main class="content">
-        <h2>Vaccine Calendar Reminder</h2>
-        <select class="vaccine-select">
-          <option>Select a vaccine</option>
-          <option>BCG</option>
-          <option>OPV</option>
-          <option>DTP / Pentavalent</option>
-          <option>Hepatitis B</option>
-        </select>
+<header>
+  <div class="logo">VacciCare</div>
+  <div class="header-title">Vaccine Calendar</div>
+  <div class="profile-icon"></div>
+</header>
 
-        <img
-          src="../Assets/pregnant-woman-counting-down-delivery-date.jpg"
-          alt="Calendar Image"
-          class="calendar-image"
-        />
+<div class="container">
 
-        <div class="vaccine-details">
-          <h3>Vaccine Details</h3>
+  <nav class="sidebar">
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="../page/new_hospital.html">Hospital</a></li>
+      <li><a href="../page/new_dash.html">Dashboard</a></li>
+      <li><a href="../page/calender.html">Vaccine Calendar</a></li>
+      <li><a href="../page/guideness.html">Health Guidelines</a></li>
+      <li><a href="../page/vaccine.html">Add vaccine</a></li>
+      <li><a href="../page/profile.html">Profile</a></li>
+    </ul>
+  </nav>
 
-          <form class="vaccine-form">
-            <label for="vaccineName">Vaccine Name</label>
-            <input
-              type="text"
-              id="vaccineName"
-              placeholder="Enter vaccine name"
-            />
+  <main class="content">
 
-            <label for="vaccineDate">Date</label>
-            <input type="date" id="vaccineDate" />
+    <h2>Vaccine Calendar Reminder</h2>
 
-            <label for="notes">Notes</label>
-            <textarea id="notes" placeholder="Enter notes"></textarea>
-            <a href="/page/vaccine.html">
-              <button type="button" class="btn">Set Reminder</button>
-            </a>
-          </form>
-        </div>
-      </main>
+    <!-- Vaccine Dropdown (From DB) -->
+    <select id="vaccineSelect" class="vaccine-select">
+      <option value="">Select a vaccine</option>
+    </select>
+
+    <img
+      src="../Assets/pregnant-woman-counting-down-delivery-date.jpg"
+      alt="Calendar Image"
+      class="calendar-image"
+    />
+
+    <div class="vaccine-details">
+
+      <h3>Vaccine Details</h3>
+
+      <form class="vaccine-form">
+
+        <label>Vaccine Name</label>
+        <input type="text" id="vaccineName" placeholder="Enter vaccine name">
+
+        <label>Date</label>
+        <input type="date" id="vaccineDate">
+
+        <label>Notes</label>
+        <textarea id="notes" placeholder="Enter notes"></textarea>
+
+        <button type="button" id="setReminderBtn" class="btn">
+          Set Reminder
+        </button>
+
+      </form>
+
     </div>
 
-    <footer>
-      <div class="footer-links">
-        <a href="../page/about.html">About</a>
-        <a href="../page/contact.html">Contact</a>
-      </div>
-      <p>&copy;2026 VacciCare</p>
-    </footer>
-  </body>
+  </main>
+
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="../page/about.html">About</a>
+    <a href="../page/contact.html">Contact</a>
+  </div>
+  <p>&copy;2026 VacciCare</p>
+</footer>
+
+<script src="../js/calendar.js"></script>
+
+</body>
 </html>

@@ -1,6 +1,6 @@
 const BASE_URL = "http://127.0.0.1:8000";
 
-/* ================= ELEMENTS ================= */
+/* ELEMENTS */
 
 const clientBtn = document.getElementById("clientBtn");
 const doctorBtn = document.getElementById("doctorBtn");
@@ -26,12 +26,10 @@ const doctor_phone = document.getElementById("doctor_phone");
 const doctor_role = document.getElementById("doctor_role");
 const doctor_address = document.getElementById("doctor_address");
 
-/* ================= STATE ================= */
-
 let role = "Client";
 let isLogin = true;
 
-/* ================= ROLE SWITCH ================= */
+/* ROLE SWITCH */
 
 clientBtn.onclick = () => {
   role = "Client";
@@ -47,16 +45,13 @@ doctorBtn.onclick = () => {
   updateForm();
 };
 
-/* ================= LOGIN / SIGNUP SWITCH ================= */
-
 switchMode.onclick = () => {
   isLogin = !isLogin;
   updateForm();
 };
 
-/* ================= UPDATE FORM ================= */
-
 function updateForm() {
+
   formTitle.innerText = `${role} ${isLogin ? "Login" : "Signup"}`;
   submitBtn.innerText = isLogin ? "Sign In" : "Create Account";
   switchMode.innerText = isLogin ? "Create one" : "Sign in";
@@ -65,179 +60,97 @@ function updateForm() {
   doctorFields.classList.add("hidden");
 
   if (!isLogin) {
-    if (role === "Client") {
-      clientFields.classList.remove("hidden");
-    }
-
-    if (role === "Doctor") {
-      doctorFields.classList.remove("hidden");
-    }
+    if (role === "Client") clientFields.classList.remove("hidden");
+    if (role === "Doctor") doctorFields.classList.remove("hidden");
   }
+
 }
 
-/* ================= LOAD HOSPITALS ================= */
-
-async function loadHospitals() {
-  try {
-    const res = await fetch(`${BASE_URL}/hospital/home`);
-    const data = await res.json();
-
-    hospitalSelect.innerHTML = `<option value="">Select Hospital</option>`;
-
-    const hospitals = Array.isArray(data) ? data : [data];
-
-    hospitals.forEach((h) => {
-      const option = document.createElement("option");
-      option.value = h.id;
-      option.textContent = h.hospital_name;
-
-      hospitalSelect.appendChild(option);
-    });
-  } catch (err) {
-    console.log("Hospital load error", err);
-  }
-}
-
-/* ================= FORM SUBMIT ================= */
+/* LOGIN / SIGNUP */
 
 form.onsubmit = async (e) => {
+
   e.preventDefault();
 
-  if (!email.value || !password.value) {
+  if (!email.value.trim() || !password.value.trim()) {
     alert("Email and Password required");
     return;
   }
 
-  /* ================= LOGIN ================= */
-
   if (isLogin) {
+
     const payload = {
       email: email.value.trim(),
-      password: password.value.trim(),
+      password: password.value.trim()
     };
 
-    const url =
-      role === "Client"
-        ? `${BASE_URL}/client/login`
-        : `${BASE_URL}/doctor/login`;
+    const url = role === "Client"
+      ? `${BASE_URL}/client/login`
+      : `${BASE_URL}/doctor/login`;
 
     try {
-      const res = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+
+      const res = await fetch(url,{
+        method:"POST",
+        headers:{ "Content-Type":"application/json"},
+        body:JSON.stringify(payload)
       });
 
       const data = await res.json();
 
-      if (!res.ok) {
+      if(!res.ok){
         alert(data.detail || "Login failed");
         return;
       }
 
-      /* SAVE LOGIN DATA */
+      localStorage.clear();
 
-      localStorage.setItem("role", role);
+      localStorage.setItem("role",role);
 
-      if (role === "Client") {
-        localStorage.setItem("client_id", data.client_id);
+      if(role==="Client"){
+        localStorage.setItem("client_id",data.client_id);
+        localStorage.setItem("client_email",email.value.trim());
       }
 
       alert("Login successful");
 
-      /* REDIRECT LOGIC */
+      window.location.href="../page/new_dash.html";
 
-      const redirectPage = localStorage.getItem("redirectAfterLogin");
-
-      if (redirectPage) {
-        localStorage.removeItem("redirectAfterLogin");
-
-        window.location.href = redirectPage;
-      } else {
-        window.location.href = "../page/new_dash.html";
-      }
-    } catch (err) {
-      console.error(err);
+    } catch {
       alert("Server not reachable");
     }
 
     return;
   }
 
-  /* ================= CLIENT SIGNUP ================= */
+  /* CLIENT SIGNUP */
 
-  if (role === "Client") {
-    const payload = {
-      name: client_name.value.trim(),
-      email: email.value.trim(),
-      password: password.value.trim(),
-      phone_no: client_phone.value.trim(),
-      address: client_address.value.trim(),
-      location: client_location.value.trim(),
+  if(role==="Client"){
+
+    const payload={
+      name:client_name.value.trim(),
+      email:email.value.trim(),
+      password:password.value.trim(),
+      phone_no:client_phone.value.trim(),
+      address:client_address.value.trim(),
+      location:client_location.value.trim()
     };
 
-    try {
-      const res = await fetch(`${BASE_URL}/client/create`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+    const res = await fetch(`${BASE_URL}/client/create`,{
+      method:"POST",
+      headers:{ "Content-Type":"application/json"},
+      body:JSON.stringify(payload)
+    });
 
-      if (res.ok) {
-        alert("Client created successfully");
-        form.reset();
-        isLogin = true;
-        updateForm();
-      } else {
-        alert("Signup failed");
-      }
-    } catch {
-      alert("Server error");
+    if(res.ok){
+      alert("Client created successfully");
+      form.reset();
+      isLogin=true;
+      updateForm();
+    }else{
+      alert("Signup failed");
     }
+
   }
 
-  /* ================= DOCTOR SIGNUP ================= */
-
-  if (role === "Doctor") {
-    if (!hospitalSelect.value) {
-      alert("Please select hospital");
-      return;
-    }
-
-    const payload = {
-      name: doctor_name.value.trim(),
-      email: email.value.trim(),
-      password: password.value.trim(),
-      phone_no: doctor_phone.value.trim(),
-      role: doctor_role.value.trim(),
-      address: doctor_address.value.trim(),
-      hospital_id: parseInt(hospitalSelect.value),
-    };
-
-    try {
-      const res = await fetch(`${BASE_URL}/doctor/create`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      if (res.ok) {
-        alert("Doctor created successfully");
-        form.reset();
-        isLogin = true;
-        updateForm();
-      } else {
-        alert("Signup failed");
-      }
-    } catch {
-      alert("Server error");
-    }
-  }
 };
-
-/* ================= INIT ================= */
-
-document.addEventListener("DOMContentLoaded", () => {
-  updateForm();
-  loadHospitals();
-});

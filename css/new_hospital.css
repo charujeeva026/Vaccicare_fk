@@ -15,15 +15,15 @@ body {
 
 /* ================= SIDEBAR ================= */
 
-.sidebar {
+.sidebar{
   width: 240px;
   height: 100vh;
   background: #0c2b63;
   color: white;
   padding: 25px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  top: 0;
   font-size: 22px;
 }
 
@@ -78,7 +78,7 @@ body {
   display: block;
   color:white;
   text-decoration: none;
-  margin: 15px 0;
+  margin: 20px 0;
   padding: 20px 12px;
   border-radius: 10px;
 }
@@ -110,8 +110,9 @@ body {
 
 /* ================= MAIN ================= */
 
-.main {
-  flex: 1;
+.main{
+  margin-left: 240px;
+  width: calc(100% - 560px);
   padding: 40px;
 }
 
@@ -147,15 +148,15 @@ span{
 }
 
 /* ================= HOSPITAL CARDS ================= */
-
 .cards {
-  display: flex;
-  gap: 27px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
 }
 
 .card {
   background: white;
-  width: 32%;
+  width: 300px;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   overflow: hidden;
@@ -216,11 +217,17 @@ span{
 
 /* ================= RIGHT PANEL ================= */
 
-.right-panel {
+.right-panel{
   width: 320px;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  overflow-y: auto;
   padding: 35px 20px;
   background: #f8fafc;
   border-left: 1px solid #e5e7eb;
+  scroll-behavior: smooth;
 }
 
 .right-panel h3 {

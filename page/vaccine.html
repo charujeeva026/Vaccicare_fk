@@ -1,22 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VacciCare - Health Guidelines</title>
+  <title>VacciCare - Add Vaccine</title>
+
   <link rel="stylesheet" href="../css/vaccine.css">
+
+  <!-- EMAIL JS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <script>
+    (function () {
+      emailjs.init("tKtEmkAlOzasdQpgS");
+    })();
+  </script>
+
 </head>
+
 <body>
+
+  <!-- HEADER -->
   <header>
     <div class="logo">
-      <img src="../Assets/logo_without bg.png" alt="logo" width="50px" height="50px">
+      <img src="../Assets/logo_without bg.png" width="50" height="50">
       <h2>Vacci<span>Care</span></h2>
     </div>
-    <div class="header-title">Add Vaccination</div>
+
+    <div class="header-title">
+      Add Vaccination
+    </div>
+
     <div class="profile-icon"></div>
   </header>
 
+
+  <!-- MAIN CONTAINER -->
   <div class="container">
+
+    <!-- SIDEBAR -->
     <nav class="sidebar">
       <ul>
         <li><a href="../index.html">Home</a></li>
@@ -24,44 +47,44 @@
         <li><a href="new_dash.html">Dashboard</a></li>
         <li><a href="calender.html">Vaccine Calendar</a></li>
         <li><a href="guideness.html">Health Guidelines</a></li>
-         <li><a href="../page/vaccine.html">Add vaccine</a></li>
+        <li><a href="../page/vaccine.html">Add Vaccine</a></li>
         <li><a href="profile.html">Profile</a></li>
       </ul>
     </nav>
 
+
+    <!-- CONTENT -->
     <main class="content">
-      <h2>Add vaccine</h2>
-      <div class="guideline-cards">
-       <div class="info-box vaccine-box">
-  <div class="vaccine-left">
-    <h3>Vaccine Name</h3>
-    <p>BCG</p>
-  </div>
 
-  <div class="vaccine-middle">
-    <h4>Date</h4>
-    <p>12 / 02 / 2026</p>
-  </div>
+      <h2>Add Vaccine</h2>
 
-  <div class="vaccine-right">
-    <button class="status-btn pending">Not Completed</button>
-    <!-- or -->
-    <!-- <button class="status-btn done">Completed</button> -->
-  </div>
-</div>
+      <!-- JS WILL LOAD VACCINES HERE -->
+      <div class="guideline-cards" id="vaccineContainer">
 
-       
+        <!-- vaccines will be inserted dynamically -->
 
       </div>
+
     </main>
+
   </div>
 
+
+  <!-- FOOTER -->
   <footer>
+
     <div class="footer-links">
       <a href="../page/about.html">About</a>
       <a href="../page/contact.html">Contact</a>
     </div>
-    <p>&copy;2026 VacciCare</p>
+
+    <p>©2026 VacciCare</p>
+
   </footer>
+
+
+  <!-- JS FILE -->
+  <script src="../js/vaccine_record.js"></script>
+
 </body>
 </html>
