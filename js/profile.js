@@ -1,4 +1,4 @@
-const API_BASE = "http://127.0.0.1:8000/client";
+const API_BASE = "https://vaccicare-bk.vercel.app/client";
 
 const nameEl = document.querySelector(".profile-info h3");
 const emailEl = document.querySelector(".profile-info p:nth-child(2)");

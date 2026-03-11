@@ -57,7 +57,7 @@ localStorage.setItem(key1,"sent");
 
 async function loadVaccines(){
 
-const res=await fetch("http://127.0.0.1:8000/reminder/home");
+const res=await fetch("https://vaccicare-bk.vercel.app/reminder/home");
 const data=await res.json();
 
 const my=data.filter(r=>r.client_id==client_id);

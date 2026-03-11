@@ -12,7 +12,7 @@ const client_id=localStorage.getItem("client_id");
 
 async function loadVaccines(){
 
-const res=await fetch("http://127.0.0.1:8000/vaccine/home");
+const res=await fetch("https://vaccicare-bk.vercel.app/vaccine/home");
 const vaccines=await res.json();
 
 vaccineSelect.innerHTML=`<option value="">Select Vaccine</option>`;
@@ -51,7 +51,7 @@ date:date,
 day:day
 };
 
-const res=await fetch("http://127.0.0.1:8000/reminder/create",{
+const res=await fetch("https://vaccicare-bk.vercel.app/reminder/create",{
 method:"POST",
 headers:{ "Content-Type":"application/json"},
 body:JSON.stringify(payload)
@@ -68,7 +68,7 @@ loadReminders();
 
 async function loadReminders(){
 
-const res=await fetch("http://127.0.0.1:8000/reminder/home");
+const res=await fetch("https://vaccicare-bk.vercel.app/reminder/home");
 const data=await res.json();
 
 const myReminders=data.filter(r=>r.client_id==client_id);

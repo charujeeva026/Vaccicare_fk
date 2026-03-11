@@ -11,7 +11,7 @@ async function loadHospitals(){
 
     try{
 
-        const response = await fetch("http://127.0.0.1:8000/hospital/home");
+        const response = await fetch("https://vaccicare-bk.vercel.app/hospital/home");
         const data = await response.json();
 
         hospitals = data;
