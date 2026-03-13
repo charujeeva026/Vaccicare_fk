@@ -133,7 +133,7 @@ function goToAppointment(id){
 
 function callEmergency(){
 
-    alert("Calling Emergency 108 🚑");
+    alert("Calling Emergency 108 ");
     window.location.href = "tel:108";
 
 }
