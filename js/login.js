@@ -1,4 +1,5 @@
 const BASE_URL = "https://vaccicare-bk.vercel.app";
+// const BASE_URL = "http://127.0.1:8000";
 
 /* ELEMENTS */
 

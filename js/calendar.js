@@ -51,7 +51,9 @@ date:date,
 day:day
 };
 
-const res=await fetch("https://vaccicare-bk.vercel.app/reminder/create",{
+const res=await fetch("https://vaccicare-bk.vercel.app/reminder/create"
+// const res=await fetch("http://127.0.1:8000/reminder/create"
+    ,{
 method:"POST",
 headers:{ "Content-Type":"application/json"},
 body:JSON.stringify(payload)
@@ -69,6 +71,7 @@ loadReminders();
 async function loadReminders(){
 
 const res=await fetch("https://vaccicare-bk.vercel.app/reminder/home");
+// const res=await fetch("http://127.0.1:8000/reminder/home");
 const data=await res.json();
 
 const myReminders=data.filter(r=>r.client_id==client_id);

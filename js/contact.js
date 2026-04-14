@@ -1,7 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Initialize EmailJS with your Public Key
+  emailjs.init({
+    publicKey: "YOUR_PUBLIC_KEY", // Substitute with your actual Public Key
+  });
+
   const form = document.querySelector(".contact-form");
 
-  form.addEventListener("submit", async function (e) {
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const name = document.getElementById("name").value.trim();
@@ -13,25 +18,22 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    try {
-      const response = await fetch("https://vaccicare-bk.vercel.app/contact/send", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message })
-      });
+    // Prepare template parameters
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      message: message,
+    };
 
-      const result = await response.json();
-
-      if (response.ok) {
-        alert(result.message);
+    // Send email using EmailJS
+    emailjs.send("service_dgoga76", "YOUR_TEMPLATE_ID", templateParams)
+      .then(function (response) {
+        console.log("SUCCESS!", response.status, response.text);
+        alert("Message sent successfully!");
         form.reset();
-      } else {
-        alert(result.message || "Failed to send message");
-      }
-
-    } catch (error) {
-      console.error("Error sending message:", error);
-      alert("Failed to send message");
-    }
+      }, function (error) {
+        console.log("FAILED...", error);
+        alert("Failed to send message: " + JSON.stringify(error));
+      });
   });
 });

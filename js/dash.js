@@ -24,11 +24,12 @@ document.addEventListener("DOMContentLoaded", function () {
        2️⃣ PROFILE ICON CLICK
     ========================= */
 
-    const profileIcon = document.querySelector(".profile-icon");
+    // FIX: class name corrected
+    const profileIcon = document.querySelector(".profile img");
 
     if (profileIcon) {
         profileIcon.addEventListener("click", function () {
-            window.location.href = "profile.html";
+            window.location.href = "../page/profile.html";
         });
     }
 
@@ -55,13 +56,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     /* =========================
-       4️⃣ CARD BUTTON EFFECT
+       4️⃣ CARD BUTTON EFFECT + REDIRECT
     ========================= */
 
     const cardButtons = document.querySelectorAll(".card button");
 
-    cardButtons.forEach(button => {
+    cardButtons.forEach((button, index) => {
 
+        // hover effect (existing)
         button.addEventListener("mouseenter", function () {
             this.style.transform = "scale(1.05)";
             this.style.transition = "0.2s ease";
@@ -69,6 +71,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
         button.addEventListener("mouseleave", function () {
             this.style.transform = "scale(1)";
+        });
+
+        // 🔥 NEW: redirect logic
+        button.addEventListener("click", function () {
+
+            if (index === 0) {
+                window.location.href = "../page/new_hospital.html";
+            } 
+            else if (index === 1) {
+                window.location.href = "../page/calender.html";
+            } 
+            else if (index === 2) {
+                window.location.href = "../page/guideness.html";
+            }
+
         });
 
     });

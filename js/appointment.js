@@ -21,6 +21,7 @@ async function loadDoctors() {
   try {
 
     const response = await fetch(`https://vaccicare-bk.vercel.app/doctor/hospital/${hospitalId}`);
+    // const response = await fetch(`http://127.0.1:8000/doctor/hospital/${hospitalId}`);
     const doctors = await response.json();
 
     console.log("Doctors received:", doctors);
@@ -97,7 +98,9 @@ form.addEventListener("submit", async function (e) {
 
   try {
 
-    const response = await fetch("https://vaccicare-bk.vercel.app/appointment/create", {
+    const response = await fetch("https://vaccicare-bk.vercel.app/appointment/create"
+    // const response = await fetch("http://127.0.1:8000/appointment/create"
+      , {
 
       method: "POST",
       headers: {
@@ -115,7 +118,7 @@ form.addEventListener("submit", async function (e) {
 
     console.log("Appointment result:", result);
 
-    alert("Appointment booked successfully 🎉");
+    alert("Appointment booked successfully ");
 
     form.reset();
 
